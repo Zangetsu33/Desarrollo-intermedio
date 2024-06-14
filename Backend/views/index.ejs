@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    <link href="/path/to/output.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Users</h1>
+    </header>
+    <main>
+        <div class="container mx-auto">
+            <div class="flex flex-wrap">
+                <div class="w-full md:w-7/12">
+                    <table role="table" class="w-full min-w-[250px] overflow-y-hidden mt-12 border-l-2 border-spacing-2 table-auto rounded-l-sm">
+                        <thead class="bg-gray-100 ">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider text-center ">ID</th>
+                                <th scope="col" class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider text-center">Cédula</th>
+                                <th scope="col" class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider text-center">Nombre</th>
+                                <th scope="col" class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider text-center">Apellido</th>
+                                <th scope="col" class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider text-center">Cargo</th>
+                                <th scope="col" class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider text-center">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-solid-black text-center">
+                            <% if (data && data.length > 0) { %>
+                                <% data.forEach((item, index) => { %>
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap"><%- (index + 1) %></td>
+                                        <td class="px-6 py-4 whitespace-nowrap"><%- item.cedula %></td>
+                                        <td class="px-6 py-4 whitespace-nowrap"><%- item.nombre %></td>
+                                        <td class="px-6 py-4 whitespace-nowrap"><%- item.apellido %></td>
+                                        <td class="px-6 py-4 whitespace-nowrap"><%- item.cargo %></td>
+                                        <td class="px-6 py-4 whitespace-nowrap"><a href="/delete/<%= item.id %>" class="btn btn-primary bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Eliminar</a></td>
+                                        
+                                    </tr>
+                                <% }); %>
+                            <% } else { %>
+                                <tr>
+                                    <td colspan="7" class="px-6 py-4 whitespace-nowrap">No data available</td>
+                                </tr>
+                            <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

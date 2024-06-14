@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link href="/path/to/output.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1><%= title %></h1>
+    </header>
+    <main>
+        <div class="w-full md:w-5/12 mt-12">
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <div class="p-6">
+                    <form action="/add" method="POST" class="space-y-4">
+                        <div class="form-group">
+                            <input type="text" name="cedula" placeholder="Cédula" class="form-control border border-gray-300 rounded-lg p-2 w-full" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="nombre" placeholder="Nombre" class="form-control border border-gray-300 rounded-lg p-2 w-full" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="apellido" placeholder="Apellido" class="form-control border border-gray-300 rounded-lg p-2 w-full" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="cargo" placeholder="Cargo" class="form-control border border-gray-300 rounded-lg p-2 w-full" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

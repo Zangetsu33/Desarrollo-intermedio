@@ -1,0 +1,21 @@
+{
+  "name": "desarollo-intermedio",
+  "version": "1.0.0",
+  "description": "Desarrollo de Frontend y Backend del programa fotosintesis",
+  "main": "index.js",
+  "scripts": {
+    "start-backend": "cd backend && nodemon app.js",
+    "start-frontend": "cd frontend && npm run dev",
+    "start": "concurrently \"npm run start-backend\" \"npm run start-frontend\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "yes"
+  },
+  "author": "jonathan andres",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.1.3"
+  }
+}
